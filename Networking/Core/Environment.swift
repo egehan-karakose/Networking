@@ -102,7 +102,7 @@ public final class Environment {
     // MARK: - Private Helpers
     
     private func retrieve() -> NetworkEnvironment {
-        let value: String? = BaseDefaults.shared.retrieve(with: .environment)
+        let value: String? = AppDefaults.shared.retrieve(with: .environment)
         if let valueWrapped = value,
             let env = NetworkEnvironment(rawValue: valueWrapped) {
             return env
@@ -111,7 +111,7 @@ public final class Environment {
     }
     
     private func store() {
-        BaseDefaults.shared.store(with: .environment, value: current.rawValue)
+        AppDefaults.shared.store(with: .environment, value: current.rawValue)
     }
     
 }
