@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Common
 
 struct JSONParameterEncoder: ParameterEncoder {
     
@@ -20,3 +19,5 @@ struct JSONParameterEncoder: ParameterEncoder {
     }
     
 }
+
+

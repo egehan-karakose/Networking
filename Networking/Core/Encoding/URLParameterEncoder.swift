@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Common
 
 struct URLParameterEncoder: ParameterEncoder {
 

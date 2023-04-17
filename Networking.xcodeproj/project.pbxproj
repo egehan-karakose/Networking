@@ -30,6 +30,11 @@
 		B072A20127F0AB7100419BF1 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B072A1FF27F0AB7100419BF1 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B072A20427F0AB8900419BF1 /* Comp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B072A20327F0AB8900419BF1 /* Comp.framework */; };
 		B072A20527F0AB8900419BF1 /* Comp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B072A20327F0AB8900419BF1 /* Comp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D860280D29EDC78A00E2607C /* Obfuscated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860280C29EDC78A00E2607C /* Obfuscated.swift */; };
+		D860280E29EDC78A00E2607C /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860280929EDC78A00E2607C /* Obfuscator.swift */; };
+		D860280F29EDC78A00E2607C /* Obfuscated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860280A29EDC78A00E2607C /* Obfuscated.swift */; };
+		D860281029EDC78A00E2607C /* Obfuscator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860280B29EDC78A00E2607C /* Obfuscator.swift */; };
+		D860281229EDC7BF00E2607C /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D860281129EDC7BF00E2607C /* TypeAliases.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,11 @@
 		B072A1FF27F0AB7100419BF1 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B072A20327F0AB8900419BF1 /* Comp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Comp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C70ACD13FC1A7A62787834F9 /* Pods-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.debug.xcconfig"; path = "../BaseProjectiOS/Pods/Target Support Files/Pods-Networking/Pods-Networking.debug.xcconfig"; sourceTree = "<group>"; };
+		D860280929EDC78A00E2607C /* Obfuscator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
+		D860280A29EDC78A00E2607C /* Obfuscated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obfuscated.swift; sourceTree = "<group>"; };
+		D860280B29EDC78A00E2607C /* Obfuscator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obfuscator.swift; sourceTree = "<group>"; };
+		D860280C29EDC78A00E2607C /* Obfuscated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Obfuscated.swift; sourceTree = "<group>"; };
+		D860281129EDC7BF00E2607C /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +139,7 @@
 		B072A1C627F0AA1600419BF1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D860280829EDC78A00E2607C /* Obfuscation */,
 				B072A1E127F0AA9500419BF1 /* Model */,
 				B072A1E027F0AA8D00419BF1 /* Helper */,
 				B072A1DF27F0AA8300419BF1 /* Error */,
@@ -175,6 +186,7 @@
 			children = (
 				B072A1F927F0AB0F00419BF1 /* NetworkActivityManager.swift */,
 				B072A1FA27F0AB0F00419BF1 /* NetworkCommunicationManager.swift */,
+				D860281129EDC7BF00E2607C /* TypeAliases.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -205,6 +217,18 @@
 				4BDC3F178599048E326E0A79 /* Pods_Networking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D860280829EDC78A00E2607C /* Obfuscation */ = {
+			isa = PBXGroup;
+			children = (
+				D860280C29EDC78A00E2607C /* Obfuscated.swift */,
+				D860280929EDC78A00E2607C /* Obfuscator.swift */,
+				D860280A29EDC78A00E2607C /* Obfuscated.swift */,
+				D860280B29EDC78A00E2607C /* Obfuscator.swift */,
+			);
+			name = Obfuscation;
+			path = ../../Common/Common/Obfuscation;
 			sourceTree = "<group>";
 		};
 		F11EF5E75B7EA1C2408BFF99 /* Pods */ = {
@@ -353,17 +377,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D860280E29EDC78A00E2607C /* Obfuscator.swift in Sources */,
+				D860280F29EDC78A00E2607C /* Obfuscated.swift in Sources */,
 				B072A1F527F0AAE500419BF1 /* JSONParameterEncoder.swift in Sources */,
 				B072A1ED27F0AAD100419BF1 /* Encryption.swift in Sources */,
 				B072A1EE27F0AAD100419BF1 /* BaseEnpointType.swift in Sources */,
 				B072A1EC27F0AAD100419BF1 /* EndpointType.swift in Sources */,
 				B072A1FE27F0AB1700419BF1 /* BaseModels.swift in Sources */,
 				B072A1FB27F0AB0F00419BF1 /* NetworkActivityManager.swift in Sources */,
+				D860281229EDC7BF00E2607C /* TypeAliases.swift in Sources */,
 				B072A1EB27F0AAD100419BF1 /* Router.swift in Sources */,
 				B072A1F627F0AAE500419BF1 /* ParameterEncoding.swift in Sources */,
 				B072A1C927F0AA1600419BF1 /* Networking.docc in Sources */,
 				B072A1F827F0AB0900419BF1 /* BError.swift in Sources */,
 				B072A1FC27F0AB0F00419BF1 /* NetworkCommunicationManager.swift in Sources */,
+				D860281029EDC78A00E2607C /* Obfuscator.swift in Sources */,
+				D860280D29EDC78A00E2607C /* Obfuscated.swift in Sources */,
 				B072A1E927F0AAD100419BF1 /* Environment.swift in Sources */,
 				B072A1EA27F0AAD100419BF1 /* HTTPMethod.swift in Sources */,
 				B072A1EF27F0AAD100419BF1 /* Logger.swift in Sources */,

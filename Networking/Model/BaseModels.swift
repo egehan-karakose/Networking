@@ -37,7 +37,11 @@ public struct KeyValuePair: Codable {
 }
 
 public struct ResponseData<T: Codable>: Codable {
-    public let status: Status?
-    public let value: T?
+    public let data: T?
+    public let code: String?
+    public let message: String?
+    public let errors: [String]?
+    public let success: Bool?
+    public let execTime: Double?
 }
 

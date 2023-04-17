@@ -30,27 +30,27 @@ public enum NetworkEnvironment: String, CaseIterable {
     }
     
     public var url: URL {
-        var urlString = "https://swapi.dev/api/"
+        var urlString = "http://darediceapp.tk/v1/"
         switch self {
-        case .production: urlString = ""
-        case .preprod: urlString = ""
-        case .test: urlString = "https://swapi.dev/api/"
-        case .linuxTest: urlString = ""
-        case .load: urlString = ""
-        case .pilot: urlString = ""
+        case .production: urlString = "http://darediceapp.tk/v1/"
+        case .preprod: urlString = "http://darediceapp.tk/v1/"
+        case .test: urlString = "http://darediceapp.tk/v1/"
+        case .linuxTest: urlString = "http://darediceapp.tk/v1/"
+        case .load: urlString = "http://darediceapp.tk/v1/"
+        case .pilot: urlString = "http://darediceapp.tk/v1/"
         }
         return URL(string: urlString)!
     }
     
     public var msisdnUrl: URL {
-        var urlString = "https://swapi.dev/api/"
+        var urlString = "http://darediceapp.tk/v1/"
         switch self {
-        case .production: urlString = ""
-        case .preprod: urlString = ""
-        case .test: urlString = "https://swapi.dev/api/"
-        case .linuxTest: urlString = "https://swapi.dev/api/"
-        case .load: urlString = ""
-        case .pilot: urlString = ""
+        case .production: urlString = "http://darediceapp.tk/v1/"
+        case .preprod: urlString = "http://darediceapp.tk/v1/"
+        case .test: urlString = "http://darediceapp.tk/v1/"
+        case .linuxTest: urlString = "http://darediceapp.tk/v1/"
+        case .load: urlString = "http://darediceapp.tk/v1/"
+        case .pilot: urlString = "http://darediceapp.tk/v1/"
         }
         return URL(string: urlString)!
     }
@@ -84,7 +84,7 @@ public final class Environment {
             Environment.shared.change(with: .preprod)
         #elseif LOAD
             Environment.shared.change(with: .load)
-        #elseif BETA
+        #elseif TEST
             Environment.shared.change(with: .test)
         #elseif LINUX
             Environment.shared.change(with: .linuxTest)

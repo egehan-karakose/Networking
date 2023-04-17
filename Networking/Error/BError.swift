@@ -34,9 +34,13 @@ extension BError: LocalizedError {
         case .noData:
             return "Yapılan işlem sonucunda gösterilecek bir öğe bulunamadı.".localized
         case .connection:
-            return "Şu anda işleminizi gerçekleştiremiyoruz. Lütfen daha sonra tekrar deneyin".localized
+            return "İnternet Bağlantınızı Kontrol Ediniz. \nTekrar Deneyiniz.".localized
         case .unableToDecode:
+            #if APPSTORE
             return "Şu anda işleminizi gerçekleştiremiyoruz. Lütfen daha sonra tekrar deneyin".localized
+            #else
+            return "Decoding Failed".localized
+            #endif
         case .requestCannotBeBuilt:
             return "İşlemin gerçekleşmesi için çağrı oluşturulamadı.".localized
         case .statusHasError(let errorPair):

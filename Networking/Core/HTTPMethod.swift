@@ -27,10 +27,8 @@ public enum HTTPTask {
 public enum HTTPHeaders {
     
     case empty
-    case systemJson
     case json
     case enteranceJson
-    case securePayment
 
     var value: [String: String] {
         switch self {
@@ -38,17 +36,8 @@ public enum HTTPHeaders {
             return [:]
         case .json:
             return HeaderBuilder.build()
-            
         case .enteranceJson:
             return HeaderBuilder.buildEnteranceExtras()
-        case .systemJson:
-            var header = HeaderBuilder.build()
-            header["timestamp"] = String(System.shared.appLaunchTimestamp) // overriding timestamp
-            return header
-        case .securePayment:
-            var header = HeaderBuilder.build()
-            header["channel"] = "SecurePayment"
-            return header
         }
     }
 }
@@ -121,6 +110,10 @@ public class HeaderBuilder {
     public class func build() -> [String: String] {
         var header = [String: String]()
         
+        header["Content-Type"] = "application/json"
+        header["accept"] = "*/*"
+        header["Authorization"] = "Bearer \(token)"
+        
 //        header["Content-Type"] = "application/json;charset=uft-8"
 //        header["Accept"] = "application/json"
 //
@@ -144,13 +137,13 @@ public class HeaderBuilder {
     
     class func buildEnteranceExtras() -> [String: String] {
         var header = build()
-        header["latitude"] = LocationUtils.shared.getLatitude().getStringValue()
-        header["longitude"] = LocationUtils.shared.getLongitude().getStringValue()
-        header["country-code"] = LocationUtils.shared.getCountryCode().getStringValue()
-        header["location-detail"] = LocationUtils.shared.getLocationDetails().getEncodedStringValue()
-        header["country-name"] = LocationUtils.shared.getCountry().getEncodedStringValue()
-        header["province-name"] = LocationUtils.shared.getProvinceName().getEncodedStringValue()
-        header["province-code"] = LocationUtils.shared.getProvinceCode().getEncodedStringValue()
+//        header["latitude"] = LocationUtils.shared.getLatitude().getStringValue()
+//        header["longitude"] = LocationUtils.shared.getLongitude().getStringValue()
+//        header["country-code"] = LocationUtils.shared.getCountryCode().getStringValue()
+//        header["location-detail"] = LocationUtils.shared.getLocationDetails().getEncodedStringValue()
+//        header["country-name"] = LocationUtils.shared.getCountry().getEncodedStringValue()
+//        header["province-name"] = LocationUtils.shared.getProvinceName().getEncodedStringValue()
+//        header["province-code"] = LocationUtils.shared.getProvinceCode().getEncodedStringValue()
         
         return header
     }

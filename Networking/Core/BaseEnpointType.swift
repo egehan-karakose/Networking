@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Common
 
 open class BaseEndpointType: EndpointType {
+    public var getMessage: StringHandler?
     
     public var endpoint: Endpoint {
         return mEndpoint
@@ -17,6 +17,10 @@ open class BaseEndpointType: EndpointType {
     public var mEndpoint: Endpoint!
     
     public init() {}
+    
+    public init(endpoint: Endpoint) {
+        self.mEndpoint = endpoint
+    }
     
     public func getBodyParametersWithRequest(_ request: Codable?) -> Parameters {
         guard let request = request else { return [:] }
